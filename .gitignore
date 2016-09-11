@@ -1,0 +1,11 @@
+# .gitignore for maven 
+target/
+
+# web application files
+#/web-app/WEB-INF
+ 
+# IDE support files
+.classpath
+.launch
+.project
+.idea
