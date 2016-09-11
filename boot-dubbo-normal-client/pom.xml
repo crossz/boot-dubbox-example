@@ -9,7 +9,7 @@
 	<name>boot-dubbo-normal-client</name>
 	<url>http://maven.apache.org</url>
 
-	<distributionManagement>
+<!-- 	<distributionManagement>
 		<repository>
 			<id>releases</id>
 			<name>Nexus Release Repository</name>
@@ -20,13 +20,15 @@
 			<name>Nexus Snapshot Repository</name>
 			<url>http://10.10.108.132:8081/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
-	</distributionManagement>
+	</distributionManagement> -->
+
+	
 	<repositories>
-		<repository>
+<!-- 		<repository>
 			<id>nexus</id>
 			<name>Team Nexus Repository</name>
 			<url>http://10.10.108.132:8081/nexus/content/groups/public</url>
-		</repository>
+		</repository> -->
 
 		<repository>
 			<id>offical</id>
@@ -35,11 +37,11 @@
 		</repository>
 	</repositories>
 	<pluginRepositories>
-		<pluginRepository>
+<!-- 		<pluginRepository>
 			<id>nexus</id>
 			<name>Team Nexus Repository</name>
 			<url>http://10.10.108.132:8081/nexus/content/groups/public</url>
-		</pluginRepository>
+		</pluginRepository> -->
 		<pluginRepository>
 			<id>offical</id>
 			<name>Maven Official Repository</name>

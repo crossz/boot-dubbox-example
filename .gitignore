@@ -9,3 +9,6 @@ target/
 .launch
 .project
 .idea
+
+# Mac
+.DS_Store
