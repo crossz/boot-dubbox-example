@@ -9,7 +9,7 @@ target/
 .launch
 .project
 .idea
-.iml
+*.iml
 
 # Mac
 .DS_Store
