@@ -1,13 +1,20 @@
 ## dubbox 基于spring的注解
 
-注解需要在 provider的serviceImple中，public class上加入：
+- provider的注册：applicationContext.xml
 
-···
+```
+<dubbo:annotation package="boot.dubbo" />
+
+```
+
+- provider对应的服务：注解需要在 provider的serviceImple中，public class上加入：
+
+```
 @Service(protocol = { "dubbo" })
 public class DemoServiceImpl implements DemoService {
 
 }
-···
+```
 
 ---------------------------------------------------------
 
