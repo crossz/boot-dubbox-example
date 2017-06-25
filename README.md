@@ -26,28 +26,22 @@ public class DemoServiceImpl implements DemoService {
 
  ---------------------------------------
  
- boot-dubbo-normal-client<br>
+ 
+## 测试dubbox+spring-boot:<br>
+ * boot-dubbo-api
+ * boot-dubbo-simple-provider
+ * boot-dubbo-simple-consumer
+
+这个三件套是标准dubbo的配置，用spring boot实现的。
+
+ * boot-dubbo-consumer-test 
+ 
+它是dubbo的客户端(consumer)，在这里我做了一些其他实现方面的尝试；它通过调用api等于invoke到serice的服务上，从而实现了rpc的调用和服务治理。<br>
 
  * 这个项目我想以一个第三方的项目使用dubbox
  * 这个项目跟spring boot没有一点关系。
- 
-如果仅仅测试dubbo:<br>
- * boot-dubbo-simple-client
- * boot-dubbo-simple
 
-上述两个项目就够用了<br>
 
-boot-dubbo-infrastructure<br>
-这个模块项目只与数据库相关，其中集成了Spring-Data-Jpa以及Mybatis<br>
- * Spring-Data-Jpa一般负责增删改，这个及其简单
- * Mybatis负责较为复杂的查询
-
-boot-dubbo-service<br>
-该项目依赖api和boot-dubbo-infrastructure<br>
-它要实现api约定的接口，另外依赖boot-dubbo-infrastructure对不同数据表的操作以及对事务的操作<br>
-
-boot-dubbo-web<br>
-该项目依赖api，它是dubbo的客户端，它通过调用api等于invoke到serice的服务上，从而实现了rpc的调用和服务治理。<br>
 
 说明：<br>
  * service:一般我们的service瓶颈在IO或者数据库上，部署无需太多
@@ -104,12 +98,4 @@ Dubbox:<br>
  > 3、运行时较重，应该微内核和模块化这个框架<br>
  > 4、配置较为复杂，学习成本较高<br>
 
-建议：<br>
 
-    大家有机会一起维护Dubbox 模块化和微内核这个框架
-
-
----- 
-
-### JPA:
-最后我想说一下JPA这个事情，无论大家最终是否使用JPA，即便使用MyBatis中间件，也会有Entity概念，当然MyBatis理论会有很多的VO对象，我想表达的就是既然这样还不如使用JPA的自动生成表结构这个特性来达到开箱即用（不用再维护数据库表结构），直接安装就可以使用项目，减少了维护工作量。如果真的不需要JPA在项目的运行时阶段（生成表以后）可以删除该配置模块。Spring Boot所带来的一切真的就是这么简单容易。
