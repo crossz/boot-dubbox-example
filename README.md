@@ -1,6 +1,14 @@
 ## dubbox 基于spring的注解
 
-- provider的注册：applicationContext.xml
+此 demo 仍保留 dubbo 默认的 xml 方式对 dubbo 进行配置；但是，通过 config 类，来指向 dubbo 的 xml 配置文件；如此整合便于理解与兼容原有的dubbo使用习惯。
+
+可以进一步彻底 java config 类的方式进行无 xml 方式的配置，见此blog：https://my.oschina.net/wangnian/blog/665299
+
+
+### provider 的配置方式：dubbo的默认xml方式
+
+1. 这里的配置是通过默认的 dubbo.properties 来配置 dubbo 的；
+2. 引用了 dubbox 的 Service 注解用来声明服务；
 
 ```
 <dubbo:annotation package="boot.dubbo" />
@@ -15,6 +23,19 @@ public class DemoServiceImpl implements DemoService {
 
 }
 ```
+
+### consumer 的配置方式：boot的方式声明变量
+1. 这里的配置是通过 boot 的 application.properties 来配置 dubbo 的 xml 的；
+2. 引用了 dubbox 的 Reference 注解来声明所需服务；
+3. 通过单元测试来调用 dubbo 的服务进行测试的；
+
+- consumer 对应的服务，需要在 class 上加入：
+
+```
+@Reference
+private UserService userService;
+```	
+
 
 ---------------------------------------------------------
 
