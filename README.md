@@ -8,7 +8,7 @@
 ### provider 的配置方式：dubbo的默认xml方式
 
 1. 这里的配置是通过默认的 dubbo.properties 来配置 dubbo 的；
-2. 引用了 dubbox 的 Service 注解用来声明服务；
+2. 可以引用了 dubbox 的 Service 注解用来声明服务，但此 demo 仍旧使用 spring 的 Service 来注解；
 
 ```
 <dubbo:annotation package="boot.dubbo" />
@@ -19,21 +19,27 @@
 
 ```
 @Service(protocol = { "dubbo" })
-public class DemoServiceImpl implements DemoService {
+public class UserServiceImpl implements UserService {
 
 }
 ```
 
 ### consumer 的配置方式：boot的方式声明变量
 1. 这里的配置是通过 boot 的 application.properties 来配置 dubbo 的 xml 的；
-2. 引用了 dubbox 的 Reference 注解来声明所需服务；
+2. 引用了 dubbox 的 Reference 注解来声明所需服务， com.alibaba.dubbo.config.annotation.Reference;
 3. 通过单元测试来调用 dubbo 的服务进行测试的；
 
 - consumer 对应的服务，需要在 class 上加入：
 
 ```
-@Reference
-private UserService userService;
+import com.alibaba.dubbo.config.annotation.Reference;
+
+@Service
+public class UserServiceUsing {
+	@Reference
+	private UserService userService;
+	
+}
 ```	
 
 
