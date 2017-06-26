@@ -1,4 +1,4 @@
-package boot.dubbo.simple.starter;
+package boot.dubbo.simple.provider.starter;
 
 //import javax.servlet.ServletContext;
 //import javax.servlet.ServletException;

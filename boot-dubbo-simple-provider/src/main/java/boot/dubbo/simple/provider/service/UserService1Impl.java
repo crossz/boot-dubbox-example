@@ -1,4 +1,4 @@
-package boot.dubbo.simple.service;
+package boot.dubbo.simple.provider.service;
 
 import boot.dubbo.api.User;
 import boot.dubbo.api.UserService1;

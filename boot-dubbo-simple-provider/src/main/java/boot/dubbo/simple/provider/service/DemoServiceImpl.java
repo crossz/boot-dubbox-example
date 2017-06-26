@@ -1,4 +1,4 @@
-package boot.dubbo.simple.service;
+package boot.dubbo.simple.provider.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import org.slf4j.Logger;

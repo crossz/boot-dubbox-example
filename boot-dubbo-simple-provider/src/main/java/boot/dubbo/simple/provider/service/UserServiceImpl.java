@@ -1,4 +1,4 @@
-package boot.dubbo.simple.service;
+package boot.dubbo.simple.provider.service;
 
 import java.util.ArrayList;
 import java.util.List;

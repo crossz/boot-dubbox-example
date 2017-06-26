@@ -1,4 +1,4 @@
-package boot.dubbo.simple;
+package boot.dubbo.simple.provider;
 
 import java.io.IOException;
 

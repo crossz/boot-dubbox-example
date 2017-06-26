@@ -1,4 +1,4 @@
-package boot.dubbo.simple.config;
+package boot.dubbo.simple.provider.config;
 
 //import org.springframework.boot.autoconfigure.SpringBootApplication;
 //import org.springframework.context.annotation.ComponentScan;
