@@ -1,4 +1,4 @@
-## dubbox 基于spring的注解
+## dubbox 基于 spring-boot 的注解配置方式
 
 此  boot-dubbo-simple 的 demo 仍保留 dubbo 默认的 xml 方式对 dubbo 进行配置；但是，通过 config 类，来指向 dubbo 的 xml 配置文件；如此整合便于理解与兼容原有的dubbo使用习惯。
 
@@ -12,7 +12,7 @@ If you absolutely must use XML based configuration, we recommend that you still 
 
 详见：https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-configuration-classes.html
 
-
+## simple provider 和 simple consumer 的简易配置方式来实现整合（尽量保持 dubbo 和  boot 的原有方式）
 
 ### provider 的配置方式：dubbo的默认xml方式（完全通过dubbo.properties实现参数化）
 
