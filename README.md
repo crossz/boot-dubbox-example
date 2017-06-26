@@ -68,23 +68,26 @@ public class UserServiceUsing {
  * boot-dubbo-simple-provider
  * boot-dubbo-simple-consumer
 
-这个三件套是标准dubbo的配置，用spring boot实现的。
+ 这个三件套是标准dubbo的配置，用spring boot实现的。
+
+ * boot-dubbo-consumer-noxml
+ 
+ 这里实现了去 xml，完全用 java config 的方式实现参数化，并注入 dubbo 
+ 
 
  * boot-dubbo-consumer-test 
  
-它是dubbo的客户端(consumer)，在这里我做了一些其他实现方面的尝试；它通过调用api等于invoke到serice的服务上，从而实现了rpc的调用和服务治理。<br>
+ [实验用的] 是dubbo的客户端(consumer)，在这里我做了一些其他实现方面的尝试；它通过调用api等于invoke到service的服务上，从而实现了rpc的调用和服务治理。
 
  * 这个项目我想以一个第三方的项目使用dubbox
  * 这个项目跟spring boot没有一点关系。
 
 
 
+--------------------------------------
 说明：<br>
  * service:一般我们的service瓶颈在IO或者数据库上，部署无需太多
  * web:一般的压力在web上，如果很多用户并发，session以及转换都在web上，web建议多部署几台
-
---------------------------------------
-注释：<br>
  * 在实际项目的架构中，Service和Infrastrature(DAO)之间应该还需要一层，就是ProxyDao那么这一层应该在Infrastrature这个当中
 
 
