@@ -9,14 +9,13 @@
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
-	<artifactId>boot-dubbo-simple-provider</artifactId>
-	<name>boot-dubbo-simple-provider</name>
+	<artifactId>boot-dubbo-consumer-noxml</artifactId>
+	<name>boot-dubbo-consumer</name>
 	<url>http://maven.apache.org</url>
-	<packaging>war</packaging>
-	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<start-class>boot.dubbo.simple.ApplicationBootstrap</start-class>
+		<start-class>boot.dubbo.simple.consumer.ApplicationBootstrap</start-class>
+		<zookeeper.version>3.4.6</zookeeper.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -85,6 +84,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
@@ -123,5 +123,4 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 </project>

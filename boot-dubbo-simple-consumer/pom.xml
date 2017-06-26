@@ -10,7 +10,7 @@
 		<relativePath>..</relativePath>
 	</parent>
 	<artifactId>boot-dubbo-simple-consumer</artifactId>
-	<name>boot-dubbo-simple-client</name>
+	<name>boot-dubbo-simple-consumer</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,7 +19,7 @@
 	</properties>
 	<dependencies>
 		<dependency>
-			<groupId>cn.creditease</groupId>
+			<groupId>com.cx.test</groupId>
 			<artifactId>boot-dubbo-api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<exclusions>

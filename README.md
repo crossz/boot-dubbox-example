@@ -1,11 +1,20 @@
 ## dubbox 基于spring的注解
 
-此 demo 仍保留 dubbo 默认的 xml 方式对 dubbo 进行配置；但是，通过 config 类，来指向 dubbo 的 xml 配置文件；如此整合便于理解与兼容原有的dubbo使用习惯。
+此  boot-dubbo-simple 的 demo 仍保留 dubbo 默认的 xml 方式对 dubbo 进行配置；但是，通过 config 类，来指向 dubbo 的 xml 配置文件；如此整合便于理解与兼容原有的dubbo使用习惯。
 
-可以进一步彻底 java config 类的方式进行无 xml 方式的配置，见此blog：https://my.oschina.net/wangnian/blog/665299
+另 boot-dubbo-consumer-noxml 则是通过 java config 的方式，即无 xml，来实现 dubbo 与 spring boot 的整合。
+Spring boot的官网建议尽量少用 xml 文件的配置方式：如下：
+
+### Configuration classes
+Spring Boot favors Java-based configuration. Although it is possible to call SpringApplication.run() with an XML source, we generally recommend that your primary source is a @Configuration class. Usually the class that defines the main method is also a good candidate as the primary @Configuration.
+### Importing XML configuration
+If you absolutely must use XML based configuration, we recommend that you still start with a @Configuration class. You can then use an additional @ImportResource annotation to load XML configuration files.
+
+详见：https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-configuration-classes.html
 
 
-### provider 的配置方式：dubbo的默认xml方式
+
+### provider 的配置方式：dubbo的默认xml方式（完全通过dubbo.properties实现参数化）
 
 1. 这里的配置是通过默认的 dubbo.properties 来配置 dubbo 的；
 2. 可以引用了 dubbox 的 Service 注解用来声明服务，但此 demo 仍旧使用 spring 的 Service 来注解；
@@ -24,7 +33,7 @@ public class UserServiceImpl implements UserService {
 }
 ```
 
-### consumer 的配置方式：boot的方式声明变量
+### consumer 的配置方式：boot的方式声明变量（无dubbo.properties变量配置文件，完全是 boot 的 application.properties 与 dubbo 的 xml 整合）
 1. 这里的配置是通过 boot 的 application.properties 来配置 dubbo 的 xml 的；
 2. 引用了 dubbox 的 Reference 注解来声明所需服务， com.alibaba.dubbo.config.annotation.Reference;
 3. 通过单元测试来调用 dubbo 的服务进行测试的；
