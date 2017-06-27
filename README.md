@@ -1,8 +1,8 @@
 ## dubbox 基于 spring-boot 的注解配置方式
 
-此  boot-dubbo-simple 的 demo 仍保留 dubbo 默认的 xml 方式对 dubbo 进行配置；但是，通过 config 类，来指向 dubbo 的 xml 配置文件；如此整合便于理解与兼容原有的dubbo使用习惯。
+此  boot-dubbo-simple 的 demo 仍保留 dubbo 默认的 xml 方式对 dubbo 进行配置；但是，通过 Configuation 类，来指向 dubbo 的 xml 配置文件；如此整合便于理解与兼容原有的dubbo使用习惯。
 
-另 boot-dubbo-consumer-noxml 则是通过 java config 的方式，即无 xml，来实现 dubbo 与 spring boot 的整合。
+另 boot-dubbo-consumer-noxml 则是通过 JavaConfig 的方式，即无 xml，来实现 dubbo 与 spring boot 的整合。
 Spring boot的官网建议尽量少用 xml 文件的配置方式：如下：
 
 ### Configuration classes
@@ -12,7 +12,7 @@ If you absolutely must use XML based configuration, we recommend that you still 
 
 详见：https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-configuration-classes.html
 
-## simple provider 和 simple consumer 的简易配置方式来实现整合（尽量保持 dubbo 和  boot 的原有方式）
+## simple provider 和 simple consumer 的简易配置方式来实现整合（尽量保持 dubbo 和 boot 的原有方式）
 
 ### provider 的配置方式：dubbo的默认xml方式（完全通过dubbo.properties实现参数化）
 
@@ -54,16 +54,15 @@ public class UserServiceUsing {
 
 ---------------------------------------------------------
 
-使用：<br>
+使用：
  > 1、安装Maven<br>
  > 2、下载dubbox，在${dubbox-home}执行mvn clean install -Dmaven.test.skip=true <br> (执行该命令会从中央仓库下载依赖，若一次安装不成功，多执行几次，一般都是网络问题或依赖问题造成的)，最终肯定会成功安装到本地仓库中<br>
  > 3、使用Eclipse/IDEA导入boot-dubbo基本上的结构你就可以看懂了，下述也有简单的描述<br>
  
 
  ---------------------------------------
- 
- 
-## 测试dubbox+spring-boot:<br>
+  
+## 测试dubbox+spring-boot:
  * boot-dubbo-api
  * boot-dubbo-simple-provider
  * boot-dubbo-simple-consumer
@@ -72,7 +71,7 @@ public class UserServiceUsing {
 
  * boot-dubbo-consumer-noxml
  
- 这里实现了去 xml，完全用 java config 的方式实现参数化，并注入 dubbo 
+ 这里实现了去 xml，完全用 JavaConfig 的方式实现参数化，并注入 dubbo 
  
 
  * boot-dubbo-consumer-test 
@@ -85,7 +84,7 @@ public class UserServiceUsing {
 
 
 --------------------------------------
-说明：<br>
+说明：
  * service:一般我们的service瓶颈在IO或者数据库上，部署无需太多
  * web:一般的压力在web上，如果很多用户并发，session以及转换都在web上，web建议多部署几台
  * 在实际项目的架构中，Service和Infrastrature(DAO)之间应该还需要一层，就是ProxyDao那么这一层应该在Infrastrature这个当中
@@ -93,7 +92,7 @@ public class UserServiceUsing {
 
  ----
 
-##Spring-Boot With Dubbox ##
+## Spring-Boot With Dubbox ##
 
 该项目整合了最新的Spring Boot和功能强大的RPC框架Dubbox<br>
 两者都有优点，也都有缺点<br>
