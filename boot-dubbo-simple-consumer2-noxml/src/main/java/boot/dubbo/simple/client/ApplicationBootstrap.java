@@ -10,10 +10,5 @@ public class ApplicationBootstrap {
 
     public static void main(String[] args) {
         SpringApplication.run(ApplicationBootstrap.class, args);
-		try {
-			System.in.read();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
     }
 }
