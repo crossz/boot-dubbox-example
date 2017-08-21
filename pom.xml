@@ -35,7 +35,7 @@
 	</properties>
 	<modules>
 		<module>boot-dubbo-api</module>
-		<module>boot-dubbo-consumer-test</module>
+		<module>boot-dubbo-simple-consumer2-noxml</module>
 		<module>boot-dubbo-simple-provider</module>
 		<module>boot-dubbo-simple-consumer</module>
 	</modules>
